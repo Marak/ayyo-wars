@@ -1,0 +1,25 @@
+<h1>Skirmish</h1>
+<div id="game-canvas-div"></div>
+<script type="text/javascript">
+
+
+  /*
+  
+    new page embed syntax
+    design is such that each page reloads the game engine entirely
+  
+  */
+  alienWarz.Game.init();
+  alienWarz.Game.bindCreate(function(){
+
+   game.text2 = game.add.text(250, 250, 'Alien Warz', { font: "74px Arial Black", fill: "#000" });
+   game.text2.setStroke('#fff', 16);
+   game.text2.setShadow(2, 2, "#333333", 2, true, true);
+
+   alienWarz.Behavior.attach('hasKeyboardInputs', game);
+   alienWarz.Behavior.attach('isLevel0', game);
+
+  });
+
+</script>
+
