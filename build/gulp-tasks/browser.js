@@ -16,10 +16,10 @@ module.exports = function browser () {
     standalone: 'alienWarz',
     debug: true
   })
-  .bundle()
-  .pipe(source(files.jsOutput))
-  .pipe(buffer())
-  .pipe(dest('public/js'))
-  .pipe(rename({ extname: ".min.js" }))
+    .bundle()
+    .pipe(source(files.jsOutput))
+    .pipe(buffer())
+    .pipe(dest('public/js'))
+    .pipe(rename({ extname: ".min.js" }))
 };
 
