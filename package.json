@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/server.js"
   },
   "author": "Marak",
   "license": "GPL",
@@ -17,5 +18,16 @@
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@geckos.io/phaser-on-nodejs": "^1.2.3",
+    "@geckos.io/snapshot-interpolation": "^1.0.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "phaser": "3.24.1",
+    "simple-peer": "^9.10.0",
+    "view": "https://github.com/stackvana/view/tarball/master",
+    "wrtc": "^0.4.7",
+    "ws": "^7.4.4"
+  }
 }
