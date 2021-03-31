@@ -9,7 +9,7 @@
   
 <div id="game-canvas-div"></div>
 <script type="text/javascript">
-  let serverConnection, peer, connected = false;
+  let serverConnection, peer, connected = false, currentPlayer;
   const SI = new SnapshotInterpolation(60);
   $(document).ready(function() {
 
@@ -17,7 +17,7 @@
     // Create websocket client connection to server
     // Websockets are used as signaling server to peer the webrtc nodes
     //
-    serverConnection = new WebSocket('ws://0.0.0.0:3434');
+    serverConnection = new WebSocket('ws://192.168.1.80:3434');
     serverConnection.onmessage = function (msg) {
       var data = JSON.parse(msg.data);
       console.log('message data', data);
@@ -31,15 +31,32 @@
         }
         // p.signal(data.payload);
       }
-      if (data.type === 'waiting') {
-        // console.log("ATTEMPTING MANUAL CONNECT");
-        //if (!gameState.connected) {
-          // attemptPeerConnection();
-          // }
+
+      if (data.type === 'acceptedGame') {
+        console.log('game accepted');
+        currentPlayer = data.playerName;
+        createWebRtcPeer();
       }
+
     };
+
     serverConnection.onopen = function () {
       $.growl.notice({ message: "Connected to signal server." });
+      let msg = {
+        type: 'joinGame'
+      };
+      serverConnection.send(JSON.stringify(msg, true, 2));
+    };
+    serverConnection.onerror = function () {
+      $.growl.error({ message: "Could not connect to signal server.", fixed: true });
+    };
+    serverConnection.onclose = function () {
+      $.growl.warning({ message: "Connection to signal server closed", fixed: true });
+      console.log('onclose')
+      // alert('onclose');
+    };    
+
+    function createWebRtcPeer () {
       peer = new SimplePeer({
         initiator: true,
         trickle: false,
@@ -75,13 +92,12 @@
           // destroy any things that can't be found
           /*
           */
-          
+          // console.log('current', currentThings)
           for (let t in alienWarz.Things) {
             if (currentThings.indexOf(t) === -1) {
-              alienWarz.Things[t].G.destroy();
+              // alienWarz.Things[t].G.destroy();
             }
           }
-          
           /*
           */
           
@@ -98,30 +114,41 @@
         connected = true;
         peer.send('hello jones ' + Math.random());
       });
+    }
 
-    };
-    serverConnection.onerror = function () {
-      $.growl.error({ message: "Could not connect to signal server.", fixed: true });
-    };
-    serverConnection.onclose = function () {
-      $.growl.warning({ message: "Connection to signal server closed", fixed: true });
-      console.log('onclose')
-      // alert('onclose');
-    };    
-
+    alienWarz.Game.clientMode = true;
     alienWarz.Game.init({});
     alienWarz.Game.bindUpdate(function(){
-      if (Things['PLAYER_1'] && Things['PLAYER_1'].inputs) {
+
+      // console.log('currentPlayer', currentPlayer)
+      if (!Things[currentPlayer] || !Things[currentPlayer].inputs) {
+        return;
+      }
+
+      // TODO: move this to server lib?
+      if (game.input) {
+        for (let input in alienWarz.inputs['PLAYER_1']) {
+          var key = game.input.keyboard.addKey(alienWarz.inputs['PLAYER_1'][input]);
+          Things[currentPlayer].inputs = Things[currentPlayer].inputs || {};
+          if (key.isDown) {
+            Things[currentPlayer].inputs[input] = true;
+          } else {
+            Things[currentPlayer].inputs[input] = false;
+          }
+        }
+      }
+
+      // TODO: check for active player?
+      if (Things[currentPlayer] && Things[currentPlayer].inputs) {
         peer.send(JSON.stringify({
-          name: 'PLAYER_1',
-          inputs: Things['PLAYER_1'].inputs
+          name: currentPlayer,
+          inputs: Things[currentPlayer].inputs
         }))
       }
       try {
         const snapshot = SI.calcInterpolation('x y');
         const { state } = snapshot;
-        console.log('sss', state)
-      
+        // console.log('sss', state)
         state.forEach(function(t){
           const { id, x, y, rotation } = t;
           if (Things[id]) {
@@ -145,8 +172,7 @@
      // alienWarz.Behavior.attach('isOnlineLevel', game);
      alienWarz.Behavior.attach('hasSpeechBubble', alienWarz.Things['PLAYER_1']);
      alienWarz.Behavior.attach('hasSpeechBubble', alienWarz.Things['PLAYER_2']);
-     
-    });    
+    });
   });
 
 </script>
