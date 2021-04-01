@@ -87,7 +87,7 @@
             alienWarz.Thing.inflate(thingy);
             currentThings.push(thingy.name);
           });
-          //console.log(currentThings)
+          // console.log(currentThings)
           //console.log(Object.keys(alienWarz.Things))
           // destroy any things that can't be found
           /*
@@ -95,7 +95,7 @@
           // console.log('current', currentThings)
           for (let t in alienWarz.Things) {
             if (currentThings.indexOf(t) === -1) {
-              // alienWarz.Things[t].G.destroy();
+              alienWarz.Things[t].G.destroy();
             }
           }
           /*
