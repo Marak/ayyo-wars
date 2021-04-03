@@ -1,17 +1,19 @@
 # Alien Warz
 
-Alien Warz is an ppen-source and hackable 2d starship asteroids like space battle game. It's built with Phaser.io and Node.js. It can be played in browser.
+Alien Warz is an open-source and hackable 2d starship asteroids like space battle game. It's built with Phaser.io and Node.js. It can be played in browser.
 
+## Home Page
+
+[https://alienwarz.com](https://alienwarz.com)
+
+## About
+
+This repository is a fresh port of a project which has been in development for several years. We have the following game elements designed and planned for our Beta release:
 
  - 12 Unique Ships
  - 24 Unique Weapons
  - 5 Unique Levels
  - 4 Game Modes
- - Mutiplayer
-
-## Home Page
-
-[https://alienwarz.com](https://alienwarz.com)
 
 ## Game Modes
 
@@ -22,7 +24,6 @@ Two teams of ships battle each other until no ships are left. Can be played with
 ### Online Skirmish ( alpha )
 
 Select a team of ships and direct connect to a friend to battle. Uses WebRTC and UDP.
-
 
 ### Surival ( planned )
 
@@ -35,7 +36,6 @@ Create and modify all game behaviors including ships, weapons, items, and levels
 ### Galaxy Mode ( planned )
 
 Explore the galaxy in a space ship. Build bases. Gather resources. Battle aliens. Defend and conquer territories.
-
 
 ## Local Installation
 
@@ -56,11 +56,13 @@ This will start the game. You should then be able to open `http://localhost:3000
 
 ### Behaviors
 
-Alien Wars utilizes a Behavior based system dependency injection where every game object starts as an empty sprite and which can have behaviors "attached" to it. More [functional composition](https://en.wikipedia.org/wiki/Function_composition_(computer_science)) instead of [object inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) for defining game objects and behaviors.
+Alien Wars utilizes a Behavior based system dependency injection pattern where every game object starts as an empty sprite which can have behaviors "attached" to it. Think of it as a [functional composition](https://en.wikipedia.org/wiki/Function_composition_(computer_science)) approach instead of [object inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) for defining game objects and behaviors.
 
 Ships or other game objects are collections of behaviors each of which acts on the sprite on every update of the game loop.
 
-These behaviors control how the sprite will act. See current behaviors here: [https://github.com/Marak/alien-wars/tree/master/lib/behaviors](https://github.com/Marak/alien-wars/tree/master/lib/behaviors)
+These behaviors control how the sprite will act. 
+
+See current behaviors here: [https://github.com/Marak/alien-warz/tree/master/lib/behaviors](https://github.com/Marak/alien-warz/tree/master/lib/behaviors)
 
 ### Audio and Image Assets
 
@@ -69,6 +71,16 @@ Game audio and images are stored here:
 Any image or sound can be modified or replaced in the game. Simply search for the asset you want to modify and open it with your favorite editing application.
 
 New assets can also be put into this folder, but you will need to be sure to register and load them using `loadAsset`  function.
+
+### Online Mode
+
+*Online Protocols*
+
+Alien Warz supports multiplayer through the use of an authoratitive server which runs all game calculations. Each client connects using UDP and Webrtc to create a direct peer connection to the server. Websockets are also used as a signaling server for the WebRTC connections.
+
+Client Prediction / Lag Compensation / Snapshot Interpolation
+
+Through the use of the [https://github.com/geckosio/snapshot-interpolation](snapshot-interpolation) library, Alien Warz is able to perform client-side prediction for all game object movement and then reconcile those objects against the server state. In online mode all clients broadcast their inputs to the authortative server, which then sends back the actual server-side calculated positions to the client which adjusts them based the snapshot state differential.
 
 ## Modifying Game Contents
 
