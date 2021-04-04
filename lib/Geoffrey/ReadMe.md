@@ -4,6 +4,12 @@ Geoffrey is a composition Behaviors based framework for Phaser.io v3+
 
 Geoffrey helps you build complex games quickly using a simple Behaviors pattern
 
+## Features
+
+  - Manage and create game entities as "Things"
+  - Handle client Inputs
+  - Customizable collision handler
+  - Optional Authortative Server
 
 ## Things
 

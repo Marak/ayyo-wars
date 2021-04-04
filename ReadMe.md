@@ -1,6 +1,6 @@
 # Alien Warz
 
-Alien Warz is an open-source and hackable 2d starship asteroids like space battle game. It's built with Phaser.io and Node.js. It can be played in browser.
+Alien Warz is an open-source and hackable 2d starship asteroids like space battle game. It's built with Phaser.io and Node.js. It can be played in the browser.
 
 ## Home Page
 
@@ -29,7 +29,7 @@ Select a team of ships and direct connect to a friend to battle. Uses WebRTC and
 
 Choose a ship and battle Waves of enemies until you reach the end or die trying.
 
-### Game Editor ( planned )
+### Level Editor ( planned )
 
 Create and modify all game behaviors including ships, weapons, items, and levels. Currently only supports level editing.
 
