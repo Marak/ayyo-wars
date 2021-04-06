@@ -14,6 +14,7 @@ exports.watch = function () {
   gulp.watch('./lib/behaviors/index.js', browser);
   gulp.watch('./lib/behaviors/**/*', browser);
   gulp.watch('./lib/Geoffrey/*', browser);
+  gulp.watch('./lib/utils/*', browser);
 }
 
 exports.default = defaultTask

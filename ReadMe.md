@@ -6,6 +6,10 @@ Alien Warz is an open-source and hackable 2d starship asteroids like space battl
 
 [https://alienwarz.com](https://alienwarz.com)
 
+## Project Goals
+
+To create an amazing community built open-source game which can be used as an educational tool for years to come. Blurring the lines between Programmer and Gamer. An omage to retro gaming. The next generation's MineCraft. 
+
 ## About
 
 This repository is a fresh port of a project which has been in development for several years. We have the following game elements designed and planned for our Beta release:
