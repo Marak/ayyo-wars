@@ -60,21 +60,19 @@ This will start the game. You should then be able to open `http://localhost:3000
 
 ### Behaviors
 
-Alien Wars utilizes a Behavior based system dependency injection pattern where every game object starts as an empty sprite which can have behaviors "attached" to it. Think of it as a [functional composition](https://en.wikipedia.org/wiki/Function_composition_(computer_science)) approach instead of [object inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) for defining game objects and behaviors.
+Alien Wars utilizes a Behavior based system dependency injection pattern where every game object starts out as an empty `Thing` which can have `Behaviors` `attached to it. Think of it as a [functional composition](https://en.wikipedia.org/wiki/Function_composition_(computer_science)) approach for defining game objects and behaviors instead of [object inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)).
 
-Ships or other game objects are collections of behaviors each of which acts on the sprite on every update of the game loop.
-
-These behaviors control how the sprite will act. 
+Ships or other game objects are represented as collections of behaviors, each of which acts on the sprite on every update of the game loop. These behaviors control how the sprite will act. Complex behaviors can be created through seamlessly composing several smaller behaviors.
 
 See current behaviors here: [https://github.com/Marak/alien-warz/tree/master/lib/behaviors](https://github.com/Marak/alien-warz/tree/master/lib/behaviors)
 
 ### Audio and Image Assets
 
-Game audio and images are stored here: 
+Game audio and images are stored here: [https://github.com/Marak/alien-warz/tree/master/public/assets](https://github.com/Marak/alien-warz/tree/public/assets)
 
 Any image or sound can be modified or replaced in the game. Simply search for the asset you want to modify and open it with your favorite editing application.
 
-New assets can also be put into this folder, but you will need to be sure to register and load them using `loadAsset`  function.
+New assets can also be put into this folder, but you will need to be sure to `preload` them in your Behavior's `preload` function.
 
 ### Online Mode
 
