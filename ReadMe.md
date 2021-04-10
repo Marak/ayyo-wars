@@ -8,7 +8,7 @@ Alien Warz is an open-source and hackable 2d starship asteroids like space battl
 
 ## Project Goals
 
-To create an amazing community built open-source game which can be used as an educational tool for years to come. Blurring the lines between Programmer and Gamer. An omage to retro gaming. The next generation's MineCraft. 
+To create an amazing community built open-source video game which can be used as an educational tool for years to come. Blurring the lines between Programmer and Gamer. An omage to retro gaming. The next generation's MineCraft. 
 
 <img width="963" alt="screen-shot-alpha" src="https://user-images.githubusercontent.com/70011/114273210-345df500-99e7-11eb-8eaa-6730847f113a.png">
 
@@ -17,10 +17,11 @@ To create an amazing community built open-source game which can be used as an ed
 
 This repository is a fresh port of a project which has been in development for several years. We have the following game elements designed and planned for our Beta release:
 
+ - Online Multiplayer Battles
  - 12 Unique Ships
  - 24 Unique Weapons
- - 5 Unique Levels
- - 4 Game Modes
+ - 4 Unique Game Modes
+ - Lot's of Alien Lore
 
 ## Game Modes
 
@@ -38,7 +39,7 @@ Choose a ship and battle Waves of enemies until you reach the end or die trying.
 
 ### Level Editor ( planned )
 
-Create and modify all game behaviors including ships, weapons, items, and levels. Currently only supports level editing.
+Create and modify all game behaviors including ships, weapons, items, and levels.
 
 ### Galaxy Mode ( planned )
 
@@ -63,13 +64,13 @@ This will start the game. You should then be able to open `http://localhost:3000
 
 ### Behaviors
 
-Alien Wars utilizes a Behavior based system dependency injection pattern where every game object starts out as an empty `Thing` which can have `Behaviors` `attached to it. Think of it as a [functional composition](https://en.wikipedia.org/wiki/Function_composition_(computer_science)) approach for defining game objects and behaviors instead of [object inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)).
+Alien Wars utilizes a Behavior based system dependency injection pattern where every game object starts out as an empty `Thing` which can have `Behaviors` attached to it. Think of it as a [functional composition](https://en.wikipedia.org/wiki/Function_composition_(computer_science)) approach for defining game objects and behaviors instead of [object inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)).
 
-Ships or other game objects are represented as collections of behaviors, each of which acts on the sprite on every update of the game loop. These behaviors control how the sprite will act. Complex behaviors can be created through seamlessly composing several smaller behaviors.
+Ships or other game objects are represented as collections of behaviors, each of which acts on the game object every update of the game loop. These behaviors control how the game object will act. Complex behaviors can be created through seamlessly composing several smaller behaviors.
 
-Behaviors can also be attached and detatched dynamically during game play. It's even safe to re-apply the same behavior twice to the same game object. This is very useful for keeping game scaffolding code to a minmial and allowing for features like live game editing.
+Behaviors can also be attached and detatched dynamically during game play. It's even safe to re-apply the same behavior twice to the same game object. All of this is very useful for keeping game scaffolding code to a minmial and allowing for features like live game editing.
 
-See current behaviors here: [https://github.com/Marak/alien-warz/tree/master/lib/behaviors](https://github.com/Marak/alien-warz/tree/master/lib/behaviors)
+See current game behaviors here: [https://github.com/Marak/alien-warz/tree/master/lib/behaviors/index.js](https://github.com/Marak/alien-warz/tree/master/lib/behaviors/index.js)
 
 
 ### Audio and Image Assets
@@ -86,7 +87,7 @@ New assets can also be put into this folder, but you will need to be sure to `pr
 
 Alien Warz supports multiplayer through the use of an authoratitive server which runs all game calculations. Each client connects using UDP and Webrtc to create a direct peer connection to the server. Websockets are also used as a signaling server for the WebRTC connections.
 
-Client Prediction / Lag Compensation / Snapshot Interpolation
+*Client Prediction / Lag Compensation / Snapshot Interpolation*
 
 Through the use of the [https://github.com/geckosio/snapshot-interpolation](snapshot-interpolation) library, Alien Warz is able to perform client-side prediction for all game object movement and then reconcile those objects against the server state. In online mode all clients broadcast their inputs to the authortative server, which then sends back the actual server-side calculated positions to the client which adjusts them based the snapshot state differential.
 
@@ -108,8 +109,7 @@ Try: `console.log(Things['PLAYER_1'].G)`
 2. Take that code and create new Behavior at `./lib/behaviors/levels/isMyLevel.js`
 3. Add a new entry in `./lib/index.js` which requires the new level
 4. Make sure the project rebuilds
-5. The level should now be available in the Game Editor mode, Levels drop down
-
+5. Try modifying `./public/skirmish.html` to use your new level, it should be easy!
 
 ### Creating a new Ship
 
