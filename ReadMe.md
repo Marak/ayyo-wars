@@ -64,7 +64,10 @@ Alien Wars utilizes a Behavior based system dependency injection pattern where e
 
 Ships or other game objects are represented as collections of behaviors, each of which acts on the sprite on every update of the game loop. These behaviors control how the sprite will act. Complex behaviors can be created through seamlessly composing several smaller behaviors.
 
+Behaviors can also be attached and detatched dynamically during game play. It's even safe to re-apply the same behavior twice to the same game object. This is very useful for keeping game scaffolding code to a minmial and allowing for features like live game editing.
+
 See current behaviors here: [https://github.com/Marak/alien-warz/tree/master/lib/behaviors](https://github.com/Marak/alien-warz/tree/master/lib/behaviors)
+
 
 ### Audio and Image Assets
 
@@ -85,6 +88,16 @@ Client Prediction / Lag Compensation / Snapshot Interpolation
 Through the use of the [https://github.com/geckosio/snapshot-interpolation](snapshot-interpolation) library, Alien Warz is able to perform client-side prediction for all game object movement and then reconcile those objects against the server state. In online mode all clients broadcast their inputs to the authortative server, which then sends back the actual server-side calculated positions to the client which adjusts them based the snapshot state differential.
 
 ## Modifying Game Contents
+
+## `window.Things`
+
+Guess what? Every single game object is easily accessible in a flat structure via `window.Things`. Simply access the `Thing` you'd like inspect using `console.log(Things['PLAYER_1'])`, etc...
+
+## The `G` Scope
+
+Each `Thing` will have a property called `G`, this is short for [https://github.com/Marak/alien-warz/tree/master/lib/Geoffrey](https://github.com/Marak/alien-warz/tree/master/lib/Geoffrey). Anything related to our game logic ( and not directly to Phaser.js ) will be stored in the `G` scope. This is *super* useful when creating or modifying game content. You can also modify values live while the game is playing directly through the console.
+
+Try: `console.log(Things['PLAYER_1'].G)`
 
 ### Creating a new Level
 
