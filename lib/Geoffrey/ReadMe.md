@@ -4,6 +4,7 @@ Geoffrey is a composition Behaviors based framework for Phaser.io v3+
 
 Geoffrey helps you build complex games quickly using a simple Behaviors pattern
 
+
 ## Features
 
   - Manage and create game entities as "Things"
@@ -18,6 +19,10 @@ Geoffrey helps you build complex games quickly using a simple Behaviors pattern
 ### Functional Composition over Object Inheritance
 
 Geoffrey utilizes a dependency injection pattern where each game object starts out as an empty `Thing` which can have `Behaviors` `attached to it. Think of it as a [functional composition](https://en.wikipedia.org/wiki/Function_composition_(computer_science)) approach for defining game objects and behaviors instead of an [object inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)).
+
+![make-me-sammich](https://user-images.githubusercontent.com/70011/114274064-b865ac00-99ea-11eb-8a1e-8f245db4f763.gif)
+![now-you-sammich](https://user-images.githubusercontent.com/70011/114274066-ba2f6f80-99ea-11eb-8146-7701596b72ec.gif)
+
 
 ## Things
 
