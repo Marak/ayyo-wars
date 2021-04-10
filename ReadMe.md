@@ -95,7 +95,7 @@ Guess what? Every single game object is easily accessible in a flat structure vi
 
 ## The `G` Scope
 
-Each `Thing` will have a property called `G`, this is short for [https://github.com/Marak/alien-warz/tree/master/lib/Geoffrey](https://github.com/Marak/alien-warz/tree/master/lib/Geoffrey). Anything related to our game logic ( and not directly to Phaser.js ) will be stored in the `G` scope. This is *super* useful when creating or modifying game content. You can also modify values live while the game is playing directly through the console.
+Each `Thing` will have a property called `G`, this is short for [Geoffrey](https://github.com/Marak/alien-warz/tree/master/lib/Geoffrey). Anything related to our game logic ( and not directly to Phaser.js ) will be stored in the `G` scope. This is *super* useful when creating or modifying game content. You can also modify `G` values live while the game is playing directly through the console.
 
 Try: `console.log(Things['PLAYER_1'].G)`
 
