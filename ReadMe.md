@@ -51,7 +51,7 @@ Land on planets, moons, asteroids, and other celesetial bodies. Interact with wo
 
 ## Local Installation
 
-    git clone https://github.com/Marak/alien-wars
+    git clone https://github.com/Marak/alien-warz
     cd alien-warz
     npm install
     npm start
@@ -60,10 +60,10 @@ This will start the game. You should then be able to open `http://localhost:3000
 
 ## Local Development
 
-**Start development server**
+**Start development build process**
 
-    npm run dev
-    
+    gulp watch
+
 ## Game Architecture
 
 ### Behaviors
