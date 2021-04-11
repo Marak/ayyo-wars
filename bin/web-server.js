@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const util = require('util');
-let viewCreate = util.promisify(view.create);
 
 (async function listenServer ({ root }) {
 
