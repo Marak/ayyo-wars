@@ -1,0 +1,2 @@
+- Add Video and Voice chat over webrtc channels
+- Peer to Peer Battles using WebRTC ( randomly chosen authorative server / no servers needed )
