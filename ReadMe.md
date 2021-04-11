@@ -15,12 +15,12 @@ To create an amazing community built open-source video game which can be used as
 
 ## About
 
-This repository is a fresh port of a project which has been in development for several years. We have the following game elements designed and planned for our Beta release:
+This repository is a fresh attempt of our project which has been in development for several years. We decided on a clean rewrite using [Geoffrey](https://github.com/Marak/alien-warz/tree/master/lib/Geoffrey) and to make the entire project open-source! We have the following game elements designed and planned for our Beta release:
 
  - Online Multiplayer Battles
  - 12 Unique Ships
  - 24 Unique Weapons
- - 4 Unique Game Modes
+ - 6 Unique Game Modes
  - Lot's of Alien Lore
 
 ## Game Modes
@@ -33,6 +33,10 @@ Two teams of ships battle each other until no ships are left. Can be played with
 
 Select a team of ships and direct connect to a friend to battle. Uses WebRTC and UDP.
 
+### Galaxy Mode ( very alpha )
+
+Explore the galaxy in a space ship. Build bases. Gather resources. Battle aliens. Defend and conquer territories.
+
 ### Surival ( planned )
 
 Choose a ship and battle Waves of enemies until you reach the end or die trying.
@@ -41,9 +45,9 @@ Choose a ship and battle Waves of enemies until you reach the end or die trying.
 
 Create and modify all game behaviors including ships, weapons, items, and levels.
 
-### Galaxy Mode ( planned )
+### Surface Mode ( planned )
 
-Explore the galaxy in a space ship. Build bases. Gather resources. Battle aliens. Defend and conquer territories.
+Land on planets, moons, asteroids, and other celesetial bodies. Interact with worlds using a side-scrolling platforming view. Mine materials from the surface, or from drilling down.
 
 ## Local Installation
 
