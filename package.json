@@ -11,7 +11,7 @@
     "watch": "./node_modules/.bin/gulp watch"
   },
   "author": "Marak",
-  "license": "GPL",
+  "license": "AGPL",
   "devDependencies": {
     "browserify": "^17.0.0",
     "eslint": "^7.22.0",
