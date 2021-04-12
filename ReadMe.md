@@ -69,7 +69,7 @@ This will start a local build server that watches the project folder for changes
 
     npm run multiplayer
 
-This will start a webserver to host the game, as well as an authorative server, WebRTC server, and Websocket server. The authorative server runs the game headlessly and the browser clients will broadcast their controller inputs to the server. In this mode, all game calculations run on the server and are broadcasted back to the client.
+This will start a webserver to host the game, as well as an authoritative server, WebRTC server, and Websocket server. The authoritative server runs the game headlessly and the browser clients will broadcast their controller inputs to the server. In this mode, all game calculations run on the server and are broadcasted back to the client.
 
 You should then be able to open `http://localhost:3000/online` in your browser to connect new players.
 
@@ -91,9 +91,9 @@ See current game behaviors here: [https://github.com/Marak/ayyo-wars/tree/master
 
 Ayyo Wars supports multiplayer through the use of an authoratitive server which runs all game calculations. Each client connects using UDP and Webrtc to create a direct peer connection to the server. Websockets are also used as a signaling server for the WebRTC connections.
 
-*Client Prediction / Lag Compensation / Snapshot Interpolation*
+*Client-Side Prediction / Lag Compensation / Snapshot Interpolation*
 
-Through the use of the [https://github.com/geckosio/snapshot-interpolation](snapshot-interpolation) library, Ayyo Wars is able to perform client-side prediction for all game object movement and then reconcile those objects against the server state. In online mode all clients broadcast their inputs to the authortative server, which then sends back the actual server-side calculated positions to the client which adjusts them based the snapshot state differential.
+Through the use of the [snapshot-interpolation](https://github.com/geckosio/snapshot-interpolation) library, Ayyo Wars is able to perform client-side prediction for all game object movement and then reconcile those objects against the server state. In online mode all clients broadcast their inputs to the authortative server, which then sends back the actual server-side calculated positions to the client which adjusts them based the snapshot state differential.
 
 ## Modifying Game Contents
 
