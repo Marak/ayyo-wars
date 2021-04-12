@@ -1,9 +1,9 @@
 <html>
   <head>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.54.0/dist/phaser.min.js"></script>
-    <script src="./js/alienWarz.js"></script>
+    <script src="./js/ayyoWars.js"></script>
     <script>
-      // window['Behaviors'] = alienWarz.Behaviors;
+      // window['Behaviors'] = ayyoWars.Behaviors;
     </script>
     <style>
       body {
@@ -23,13 +23,13 @@
         design is such that each page reloads the game engine entirely
   
       */
-      alienWarz.Game.init({});
-      alienWarz.Game.bindCreate(function(){
-        let level0 = alienWarz.Thing.create({
+      ayyoWars.Game.init({});
+      ayyoWars.Game.bindCreate(function(){
+        let level0 = ayyoWars.Thing.create({
           name: 'level-0'
         })
-       alienWarz.Behavior.attach('hasStateManager', game);
-       alienWarz.Behavior.attach('isLevel0', level0);
+       ayyoWars.Behavior.attach('hasStateManager', game);
+       ayyoWars.Behavior.attach('isLevel0', level0);
       });
 
     </script>

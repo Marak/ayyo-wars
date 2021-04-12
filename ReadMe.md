@@ -1,10 +1,10 @@
-# Alien Warz
+# Ayyo Wars
 
-Alien Warz is an open-source and hackable 2d starship asteroids like space battle game. It's built with Phaser.io and Node.js. It can be played in the browser.
+Ayyo Wars is an open-source and hackable 2d starship asteroids like space battle game. It's built with Phaser.io and Node.js. It can be played in the browser.
 
 ## Home Page
 
-[https://alienwarz.com](https://alienwarz.com)
+[https://ayyowars.com](https://ayyowars.com)
 
 ## Project Goals
 
@@ -89,11 +89,11 @@ New assets can also be put into this folder, but you will need to be sure to `pr
 
 *Online Protocols*
 
-Alien Warz supports multiplayer through the use of an authoratitive server which runs all game calculations. Each client connects using UDP and Webrtc to create a direct peer connection to the server. Websockets are also used as a signaling server for the WebRTC connections.
+Ayyo Wars supports multiplayer through the use of an authoratitive server which runs all game calculations. Each client connects using UDP and Webrtc to create a direct peer connection to the server. Websockets are also used as a signaling server for the WebRTC connections.
 
 *Client Prediction / Lag Compensation / Snapshot Interpolation*
 
-Through the use of the [https://github.com/geckosio/snapshot-interpolation](snapshot-interpolation) library, Alien Warz is able to perform client-side prediction for all game object movement and then reconcile those objects against the server state. In online mode all clients broadcast their inputs to the authortative server, which then sends back the actual server-side calculated positions to the client which adjusts them based the snapshot state differential.
+Through the use of the [https://github.com/geckosio/snapshot-interpolation](snapshot-interpolation) library, Ayyo Wars is able to perform client-side prediction for all game object movement and then reconcile those objects against the server state. In online mode all clients broadcast their inputs to the authortative server, which then sends back the actual server-side calculated positions to the client which adjusts them based the snapshot state differential.
 
 ## Modifying Game Contents
 

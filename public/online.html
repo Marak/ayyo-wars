@@ -1,9 +1,9 @@
 <html>
   <head>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.54.0/dist/phaser.min.js"></script>
-    <script src="./js/alienWarz.js"></script>
+    <script src="./js/ayyoWars.js"></script>
     <script>
-      // window['Behaviors'] = alienWarz.Behaviors;
+      // window['Behaviors'] = ayyoWars.Behaviors;
     </script>
     <style>
       body {
@@ -99,18 +99,18 @@
               SI.snapshot.add(json)
               let currentThings = [];
               json.state.forEach(function(thingy){
-                alienWarz.Thing.inflate(thingy);
+                ayyoWars.Thing.inflate(thingy);
                 currentThings.push(thingy.name);
               });
               // console.log(currentThings)
-              //console.log(Object.keys(alienWarz.Things))
+              //console.log(Object.keys(ayyoWars.Things))
               // destroy any things that can't be found
               /*
               */
               //console.log('current', currentThings)
-              for (let t in alienWarz.Things) {
+              for (let t in ayyoWars.Things) {
                 if (currentThings.indexOf(t) === -1) {
-                  alienWarz.Things[t].G.destroy();
+                  ayyoWars.Things[t].G.destroy();
                 }
               }
               /*
@@ -131,16 +131,16 @@
           });
         }
 
-        alienWarz.Game.clientMode = true;
-        alienWarz.Game.init({});
-        alienWarz.Game.bindUpdate(function(){
+        ayyoWars.Game.clientMode = true;
+        ayyoWars.Game.init({});
+        ayyoWars.Game.bindUpdate(function(){
 
           // console.log('currentPlayer', currentPlayer)
           if (Things[currentPlayer] && Things[currentPlayer].inputs) {
             // TODO: move this to server lib?
             if (game.input) {
-              for (let input in alienWarz.inputs['PLAYER_1']) {
-                var key = game.input.keyboard.addKey(alienWarz.inputs['PLAYER_1'][input]);
+              for (let input in ayyoWars.inputs['PLAYER_1']) {
+                var key = game.input.keyboard.addKey(ayyoWars.inputs['PLAYER_1'][input]);
                 Things[currentPlayer].inputs = Things[currentPlayer].inputs || {};
                 if (key.isDown) {
                   Things[currentPlayer].inputs[input] = true;
@@ -178,13 +178,13 @@
         
           }
         });
-        alienWarz.Game.servermode = false;
-        alienWarz.Game.bindCreate(function(){
-         alienWarz.Behavior.attach('hasStateManager', game);
-         alienWarz.Behavior.attach('hasChatBox', game);
-         // alienWarz.Behavior.attach('isOnlineLevel', game);
-         alienWarz.Behavior.attach('hasSpeechBubble', alienWarz.Things['PLAYER_1']);
-         alienWarz.Behavior.attach('hasSpeechBubble', alienWarz.Things['PLAYER_2']);
+        ayyoWars.Game.servermode = false;
+        ayyoWars.Game.bindCreate(function(){
+         ayyoWars.Behavior.attach('hasStateManager', game);
+         ayyoWars.Behavior.attach('hasChatBox', game);
+         // ayyoWars.Behavior.attach('isOnlineLevel', game);
+         ayyoWars.Behavior.attach('hasSpeechBubble', ayyoWars.Things['PLAYER_1']);
+         ayyoWars.Behavior.attach('hasSpeechBubble', ayyoWars.Things['PLAYER_2']);
         });
       });
 

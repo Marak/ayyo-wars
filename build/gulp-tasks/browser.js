@@ -7,13 +7,13 @@ const { src, dest } = require('gulp');
 
 const files = {
   jsMain: './lib/index.js',
-  jsOutput: 'alienWarz.js'
+  jsOutput: 'ayyoWars.js'
 }
 
 module.exports = function browser () {
   return browserify(files.jsMain, {
     entries: './lib/index.js',
-    standalone: 'alienWarz',
+    standalone: 'ayyoWars',
     debug: true
   })
     .bundle()

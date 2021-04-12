@@ -2,7 +2,7 @@ const gulp = require('gulp');
 
 function defaultTask(cb) {
   // place code for your default task here
-  console.log('please run gulp --tasks to see available tasks for alien warz')
+  console.log('please run gulp --tasks to see available tasks for Ayyo Wars')
   console.log('you can then try running a command like `gulp readme`')
   cb();
 }
