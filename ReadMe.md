@@ -1,6 +1,6 @@
-# Ayyo Wars
+# Ayyo Wars ( *Alpha* )
 
-Ayyo Wars is an open-source and hackable 2d starship asteroids like space battle game. It's built with Phaser.io and Node.js. It can be played in the browser.
+Ayyo Wars is an open-source and hackable 2d space battle game. It's built with Phaser.io and Node.js. It can be played in the browser.
 
 ## Home Page
 
@@ -15,19 +15,20 @@ To create an amazing community built open-source video game which can be used as
 
 ## About
 
-This repository is a fresh attempt of our project which has been in development for several years. We decided on a clean rewrite using [Geoffrey](https://github.com/Marak/ayyo-wars/tree/master/lib/Geoffrey) and to make the entire project open-source! We have the following game elements designed and planned for our Beta release:
+This repository is a fresh attempt of our project which has been in development for several years. We decided on a clean rewrite using [Geoffrey](https://github.com/Marak/ayyo-wars/tree/master/lib/Geoffrey) and to make the project open-source. The following game elements designed and planned for our Beta release:
 
  - Online Multiplayer Battles
+ - Epic Local Play
  - 12 Unique Ships
  - 24 Unique Weapons
  - 6 Unique Game Modes
- - Lot's of Alien Lore
+ - Much Alien Lore
 
 ## Game Modes
 
 ### Local Skirmish ( beta )
 
-Two teams of ships battle each other until no ships are left. Can be played with two players or against an Artifical Intelligence.
+Two teams of ships battle each other until no ships are left. Can be played with up to four players or Artifical Intelligences.
 
 ### Online Skirmish ( alpha )
 
@@ -47,7 +48,7 @@ Create and modify all game behaviors including ships, weapons, items, and levels
 
 ### Surface Mode ( planned )
 
-Land on planets, moons, asteroids, and other celesetial bodies. Interact with worlds using a side-scrolling platforming view. Mine materials from the surface, or from drilling down.
+Go on an away mission. Land on planets, moons, asteroids, and other celesetial bodies. Interact with worlds using a side-scrolling platforming view. Mine materials, discover ancient worlds, and try not to die before you get back to the ship!
 
 ## Local Installation
 
@@ -56,7 +57,7 @@ Land on planets, moons, asteroids, and other celesetial bodies. Interact with wo
     npm install
     npm run web
 
-This will start the game. You should then be able to open `http://localhost:3000` in your browser.
+This will start a simple webserver that hosts the game. You should then be able to open `http://localhost:3000` in your browser to play.
 
 ## Local Development
 
@@ -64,26 +65,25 @@ This will start the game. You should then be able to open `http://localhost:3000
 
 This will start a local build server that watches the project folder for changes. This will trigger a project build on code changes. Without running this command your changes won't appear in the browser.
 
+## Multiplayer Server
+
+    npm run multiplayer
+
+This will start a webserver to host the game, as well as an authorative server, WebRTC server, and Websocket server. The authorative server runs the game headlessly and the browser clients will broadcast their controller inputs to the server. In this mode, all game calculations run on the server and are broadcasted back to the client.
+
+You should then be able to open `http://localhost:3000/online` in your browser to connect new players.
+
 ## Game Architecture
 
 ### Behaviors
 
-Alien Wars utilizes a Behavior based system dependency injection pattern where every game object starts out as an empty `Thing` which can have `Behaviors` attached to it. Think of it as a [functional composition](https://en.wikipedia.org/wiki/Function_composition_(computer_science)) approach for defining game objects and behaviors instead of [object inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)).
+Alien Wars utilizes a behavior based dependency injection pattern where each game object starts out as an empty `Thing` which can have `Behaviors` attached to it. Think of it as a [functional composition](https://en.wikipedia.org/wiki/Function_composition_(computer_science)) approach for defining game objects and behaviors instead of [object inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)).
 
-Ships or other game objects are represented as collections of behaviors, each of which acts on the game object every update of the game loop. These behaviors control how the game object will act. Complex behaviors can be created through seamlessly composing several smaller behaviors.
+Ships or other game objects are represented as collections of behaviors that run every update of the game loop. These behaviors control how the game object will act. Complex behaviors can be created through seamlessly composing several smaller behaviors.
 
 Behaviors can also be attached and detatched dynamically during game play. It's even safe to re-apply the same behavior twice to the same game object. All of this is very useful for keeping game scaffolding code to a minmial and allowing for features like live game editing.
 
 See current game behaviors here: [https://github.com/Marak/ayyo-wars/tree/master/lib/behaviors/index.js](https://github.com/Marak/ayyo-wars/tree/master/lib/behaviors/index.js)
-
-
-### Audio and Image Assets
-
-Game audio and images are stored here: [https://github.com/Marak/ayyo-wars/tree/master/public/assets](https://github.com/Marak/ayyo-wars/tree/public/assets)
-
-Any image or sound can be modified or replaced in the game. Simply search for the asset you want to modify and open it with your favorite editing application.
-
-New assets can also be put into this folder, but you will need to be sure to `preload` them in your Behavior's `preload` function.
 
 ### Online Mode
 
@@ -106,6 +106,14 @@ Guess what? Every single game object is easily accessible in a flat structure vi
 Each `Thing` will have a property called `G`, this is short for [Geoffrey](https://github.com/Marak/ayyo-wars/tree/master/lib/Geoffrey). Anything related to our game logic ( and not directly to Phaser.js ) will be stored in the `G` scope. This is *super* useful when creating or modifying game content. You can also modify `G` values live while the game is playing directly through the console.
 
 Try: `console.log(Things['PLAYER_1'].G)`
+
+### Audio and Image Assets
+
+Game audio and images are stored here: [https://github.com/Marak/ayyo-wars/tree/master/public/assets](https://github.com/Marak/ayyo-wars/tree/master/public/assets)
+
+Any image or sound can be modified or replaced in the game. Simply search for the asset you want to modify and open it with your favorite editing application.
+
+New assets can also be put into this folder, but you will need to be sure to `preload` them in your Behavior's `preload` function.
 
 ## License
 
