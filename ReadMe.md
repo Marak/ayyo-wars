@@ -10,7 +10,8 @@ Ayyo Wars is an open-source and hackable 2d space battle game. It's built with P
 
 To create an amazing community built open-source video game which can be used as an educational tool for years to come. Blurring the lines between Programmer and Gamer. An omage to retro gaming. The next generation's MineCraft. 
 
-<img width="963" alt="screen-shot-alpha" src="https://user-images.githubusercontent.com/70011/114273210-345df500-99e7-11eb-8eaa-6730847f113a.png">
+
+![alpha-demo-quick](https://user-images.githubusercontent.com/70011/114433868-521a8e00-9b90-11eb-8bc2-6cf02ae2bf6e.gif)
 
 
 ## About
