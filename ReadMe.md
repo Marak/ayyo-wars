@@ -1,6 +1,6 @@
 # Ayyo Wars ( *Alpha* )
 
-[![Join the chat at https://gitter.im/ayyo-wars/community](https://badges.gitter.im/ayyo-wars/community.svg)](https://gitter.im/ayyo-wars/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/ayyo-wars/dev](https://badges.gitter.im/ayyo-wars/dev.svg)](https://gitter.im/ayyo-wars/dev?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Ayyo Wars is an open-source and hackable 2d space battle game. It's built with Phaser.io and Node.js. It can be played in the browser.
 
