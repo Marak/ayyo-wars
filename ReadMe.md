@@ -15,7 +15,7 @@ To create an amazing community built open-source video game which can be used as
 
 ## About
 
-This repository is a fresh attempt of our project which has been in development for several years. We decided on a clean rewrite using [Geoffrey](https://github.com/Marak/alien-warz/tree/master/lib/Geoffrey) and to make the entire project open-source! We have the following game elements designed and planned for our Beta release:
+This repository is a fresh attempt of our project which has been in development for several years. We decided on a clean rewrite using [Geoffrey](https://github.com/Marak/ayyo-wars/tree/master/lib/Geoffrey) and to make the entire project open-source! We have the following game elements designed and planned for our Beta release:
 
  - Online Multiplayer Battles
  - 12 Unique Ships
@@ -51,8 +51,8 @@ Land on planets, moons, asteroids, and other celesetial bodies. Interact with wo
 
 ## Local Installation
 
-    git clone https://github.com/Marak/alien-warz
-    cd alien-warz
+    git clone https://github.com/Marak/ayyo-wars
+    cd ayyo-wars
     npm install
     npm run web
 
@@ -74,12 +74,12 @@ Ships or other game objects are represented as collections of behaviors, each of
 
 Behaviors can also be attached and detatched dynamically during game play. It's even safe to re-apply the same behavior twice to the same game object. All of this is very useful for keeping game scaffolding code to a minmial and allowing for features like live game editing.
 
-See current game behaviors here: [https://github.com/Marak/alien-warz/tree/master/lib/behaviors/index.js](https://github.com/Marak/alien-warz/tree/master/lib/behaviors/index.js)
+See current game behaviors here: [https://github.com/Marak/ayyo-wars/tree/master/lib/behaviors/index.js](https://github.com/Marak/ayyo-wars/tree/master/lib/behaviors/index.js)
 
 
 ### Audio and Image Assets
 
-Game audio and images are stored here: [https://github.com/Marak/alien-warz/tree/master/public/assets](https://github.com/Marak/alien-warz/tree/public/assets)
+Game audio and images are stored here: [https://github.com/Marak/ayyo-wars/tree/master/public/assets](https://github.com/Marak/ayyo-wars/tree/public/assets)
 
 Any image or sound can be modified or replaced in the game. Simply search for the asset you want to modify and open it with your favorite editing application.
 
@@ -103,7 +103,7 @@ Guess what? Every single game object is easily accessible in a flat structure vi
 
 ## The `G` Scope
 
-Each `Thing` will have a property called `G`, this is short for [Geoffrey](https://github.com/Marak/alien-warz/tree/master/lib/Geoffrey). Anything related to our game logic ( and not directly to Phaser.js ) will be stored in the `G` scope. This is *super* useful when creating or modifying game content. You can also modify `G` values live while the game is playing directly through the console.
+Each `Thing` will have a property called `G`, this is short for [Geoffrey](https://github.com/Marak/ayyo-wars/tree/master/lib/Geoffrey). Anything related to our game logic ( and not directly to Phaser.js ) will be stored in the `G` scope. This is *super* useful when creating or modifying game content. You can also modify `G` values live while the game is playing directly through the console.
 
 Try: `console.log(Things['PLAYER_1'].G)`
 
