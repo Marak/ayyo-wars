@@ -15,7 +15,7 @@ To create an amazing community built open-source video game which can be used as
 
 ## About
 
-This repository is a fresh attempt of our project which has been in development for several years. We decided on a clean rewrite using [Geoffrey](https://github.com/Marak/ayyo-wars/tree/master/lib/Geoffrey) and to make the project open-source. The following game elements designed and planned for our Beta release:
+This repository is a fresh attempt of our project which has been in development for several years. We decided on a clean rewrite using [Geoffrey](https://github.com/Marak/ayyo-wars/tree/master/lib/Geoffrey) and to make the project open-source. The following game elements are designed and planned for our Beta release:
 
  - Online Multiplayer Battles
  - Epic Local Play
@@ -48,7 +48,7 @@ Create and modify all game behaviors including ships, weapons, items, and levels
 
 ### Surface Mode ( planned )
 
-Go on an away mission. Land on planets, moons, asteroids, and other celesetial bodies. Interact with worlds using a side-scrolling platforming view. Mine materials, discover ancient worlds, and try not to die before you get back to the ship!
+Go on an away mission. Land on planets, moons, asteroids, and other celesetial bodies. Interact with worlds using a side-scrolling platformer view. Mine materials, discover ancient worlds, and try not to die before you get back to the ship!
 
 ## Local Installation
 
@@ -63,7 +63,7 @@ This will start a simple webserver that hosts the game. You should then be able 
 
     npm run watch
 
-This will start a local build server that watches the project folder for changes. This will trigger a project build on code changes. Without running this command your changes won't appear in the browser.
+This will start a local build server that watches the project folder for changes. This will trigger a project build on code changes. Without running this command your code changes won't appear in the browser.
 
 ## Multiplayer Server
 
@@ -93,7 +93,7 @@ Ayyo Wars supports multiplayer through the use of an authoratitive server which 
 
 *Client-Side Prediction / Lag Compensation / Snapshot Interpolation*
 
-Through the use of the [snapshot-interpolation](https://github.com/geckosio/snapshot-interpolation) library, Ayyo Wars is able to perform client-side prediction for all game object movement and then reconcile those objects against the server state. In online mode all clients broadcast their inputs to the authortative server, which then sends back the actual server-side calculated positions to the client which adjusts them based the snapshot state differential.
+Through the use of the [snapshot-interpolation](https://github.com/geckosio/snapshot-interpolation) library, Ayyo Wars is able to perform client-side prediction for all game object movement and then reconcile those objects against the server state. In online mode all clients broadcast their inputs to the authortative server, which then sends back the actual server-side calculated positions to the client which updates based on the snapshot state differential.
 
 ## Modifying Game Contents
 
