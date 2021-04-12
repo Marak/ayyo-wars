@@ -31,7 +31,7 @@ Two teams of ships battle each other until no ships are left. Can be played with
 
 ### Online Skirmish ( alpha )
 
-Select a team of ships and direct connect to a friend to battle. Uses WebRTC and UDP.
+Select a ship and connect online to battle other players. Uses WebRTC and UDP.
 
 ### Galaxy Mode ( very alpha )
 
@@ -54,15 +54,15 @@ Land on planets, moons, asteroids, and other celesetial bodies. Interact with wo
     git clone https://github.com/Marak/alien-warz
     cd alien-warz
     npm install
-    npm start
+    npm run web
 
 This will start the game. You should then be able to open `http://localhost:3000` in your browser.
 
 ## Local Development
 
-**Start development build process**
+    npm run watch
 
-    gulp watch
+This will start a local build server that watches the project folder for changes. This will trigger a project build on code changes. Without running this command your changes won't appear in the browser.
 
 ## Game Architecture
 
@@ -106,32 +106,6 @@ Guess what? Every single game object is easily accessible in a flat structure vi
 Each `Thing` will have a property called `G`, this is short for [Geoffrey](https://github.com/Marak/alien-warz/tree/master/lib/Geoffrey). Anything related to our game logic ( and not directly to Phaser.js ) will be stored in the `G` scope. This is *super* useful when creating or modifying game content. You can also modify `G` values live while the game is playing directly through the console.
 
 Try: `console.log(Things['PLAYER_1'].G)`
-
-### Creating a new Level
-
-1. Find a level in `./lib/behaviors/levels/` and copy the code
-2. Take that code and create new Behavior at `./lib/behaviors/levels/isMyLevel.js`
-3. Add a new entry in `./lib/index.js` which requires the new level
-4. Make sure the project rebuilds
-5. Try modifying `./public/skirmish.html` to use your new level, it should be easy!
-
-### Creating a new Ship
-
-1. Find a ship in `./lib/behaviors/ships/` and copy the code
-2. Take that code and create new Behavior at `./lib/behaviors/ships/isMyShip.js`
-3. Add a new entry in `./lib/index.js` which requires the new Ship
-4. Make sure the project rebuilds
-5. The ship should now be available in the Game Editor mode, Behaviors drop down
-6. The new ship can also be added to a Faction in `./lib/index.js`
-
-### Creating a new Weapon
-
-1. Find a weapon in `./lib/behaviors/weapons/` and copy the code
-2. Take that code and create new Behavior at `./lib/behaviors/weapons/hasMyWeapon.js`
-3. Add a new entry in `./lib/index.js` which requires the new Weapon
-4. Make sure the project rebuilds
-5. The weapon should now be available in the Game Editor mode, Behaviors drop down
-6. The weapon can also be attached inside of a Ship's code using `attach('hasMyWeapon', sprite);`
 
 ## License
 

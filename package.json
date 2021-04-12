@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin/server.js",
+    "multiplayer": "node bin/server.js",
+    "web": "node bin/web-server.js",
     "watch": "./node_modules/.bin/gulp watch"
   },
   "author": "Marak",
