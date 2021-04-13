@@ -7,6 +7,7 @@
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "multiplayer": "node bin/server.js",
+    "start": "node bin/web-server.js",
     "web": "node bin/web-server.js",
     "watch": "./node_modules/.bin/gulp watch"
   },

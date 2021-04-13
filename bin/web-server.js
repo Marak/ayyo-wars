@@ -7,7 +7,7 @@ const util = require('util');
   const app = express();
   const server = require('http').Server(app);
 
-  app.use(express.static(path.resolve(root + '/../public'), { extensions:['html'] }));
+  app.use(express.static(path.resolve(root + '/../public'), { extensions: ['html'] }));
 
   app.use(function(req, res, next){
     req.resource = {
