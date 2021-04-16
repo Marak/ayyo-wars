@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.54.0/dist/phaser.min.js"></script>
+    <script src="./js/ayyoWars.js"></script>
+    <style>
+      body {
+        padding: 0px;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-canvas-div"></div>
+    <script type="text/javascript">
+      /*
+        Design is such that each game mode / page currently reloads the game engine entirely
+      */
+      ayyoWars.Game.init({});
+      ayyoWars.Game.bindCreate(function(){
+        let mode = ayyoWars.Thing.create({
+          name: 'home-screen'
+        });
+       ayyoWars.Behavior.attach('hasStateManager', game);
+       ayyoWars.Behavior.attach('isGalaxyMode', mode);
+      });
+
+    </script>
+
+  </body>
+</html>
