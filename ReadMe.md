@@ -100,10 +100,6 @@ Through the use of the [snapshot-interpolation](https://github.com/geckosio/snap
 
 ## Modifying Game Contents
 
-## `window.Things`
-
-Guess what? Every single game object is easily accessible in a flat structure via `window.Things`. Simply access the `Thing` you'd like inspect using `console.log(Things['PLAYER_1'])`, etc...
-
 ## The `G` Scope
 
 Each `Thing` will have a property called `G`, this is short for [Geoffrey](https://github.com/Marak/ayyo-wars/tree/master/lib/Geoffrey). Anything related to our game logic ( and not directly to Phaser.js ) will be stored in the `G` scope. This is *super* useful when creating or modifying game content. You can also modify `G` values live while the game is playing directly through the console.

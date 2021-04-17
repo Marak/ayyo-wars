@@ -16,13 +16,6 @@
         Design is such that each game mode / page currently reloads the game engine entirely
       */
       ayyoWars.Game.init({});
-      ayyoWars.Game.bindCreate(function(){
-        let mode = ayyoWars.Thing.create({
-          name: 'home-screen'
-        });
-       ayyoWars.Behavior.attach('hasStateManager', game);
-       ayyoWars.Behavior.attach('isHomeScreen', mode);
-      });
 
     </script>
 
