@@ -133,3 +133,12 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ```
+
+
+## Starmap Data
+
+```
+Star Map 2D by Filip Hracek is licensed under a Creative Commons Attribution 4.0 International License.
+```
+
+https://starmap2d.appspot.com
