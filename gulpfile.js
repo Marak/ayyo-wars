@@ -17,6 +17,8 @@ exports.watch = function () {
   gulp.watch('./lib/inputs/*', browser);
   gulp.watch('./lib/utils/*', browser);
   gulp.watch('./lib/scenes/*', browser);
+  gulp.watch('./lib/scenes/**/*', browser);
+  
 }
 
 exports.default = defaultTask
