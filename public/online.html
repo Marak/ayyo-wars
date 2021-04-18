@@ -32,7 +32,7 @@
         // Create websocket client connection to server
         // Websockets are used as signaling server to peer the webrtc nodes
         //
-        serverConnection = new WebSocket('ws://0.0.0.0:3434'); // TODO: user server IP
+        serverConnection = new WebSocket('ws://192.168.1.80:3434'); // TODO: user server IP
         serverConnection.onmessage = function (msg) {
           var data = JSON.parse(msg.data);
           console.log('message data', data);
@@ -179,6 +179,7 @@
           }
         });
         ayyoWars.Game.servermode = false;
+        
         ayyoWars.Game.bindCreate(function(){
          ayyoWars.Behavior.attach('hasStateManager', game);
          ayyoWars.Behavior.attach('hasChatBox', game);
